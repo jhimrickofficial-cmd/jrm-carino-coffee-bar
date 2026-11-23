@@ -1,0 +1,2753 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211c19">
+
+  <title>Cariño Coffee Bar | Coffee & Good Company in Tucson</title>
+  <meta name="description" content="Discover Cariño Coffee Bar in Tucson, Arizona. Coffee, connection, and a little something to brighten your day. Find us and come by.">
+  <meta property="og:title" content="Cariño Coffee Bar | Tucson, Arizona">
+  <meta property="og:description" content="Good coffee. Warm moments. Find your way to Cariño Coffee Bar.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="carino1.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="carino1.jpg">
+
+  <style>
+    :root {
+      --ink: #211c19;
+      --espresso: #35251e;
+      --coffee: #664637;
+      --cream: #f5f0e7;
+      --paper: #faf7f0;
+      --sand: #e8dfd1;
+      --terra: #b76d4f;
+      --muted: #82776e;
+      --line: rgba(53,37,30,.16);
+      --white: #fff;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --mono: "DM Mono", monospace;
+      --container: 1320px;
+      --gutter: clamp(22px, 5.5vw, 100px);
+      --ease: cubic-bezier(.22,1,.36,1);
+      --header-height: 82px;
+
+      /* Updated hero spacing */
+      --hero-extra-left: clamp(24px, 4vw, 76px);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+
+    body.menu-open,
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--terra);
+      outline-offset: 5px;
+    }
+
+    ::selection {
+      background: var(--terra);
+      color: white;
+    }
+
+    .container {
+      width: min(
+        calc(100% - var(--gutter) * 2),
+        var(--container)
+      );
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font: 500 10px/1.5 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .19em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+      opacity: .65;
+    }
+
+    .section-title {
+      font: 400 clamp(43px, 5.6vw, 88px)/1.1 var(--serif);
+      letter-spacing: -.045em;
+      margin: 22px 0;
+    }
+
+    .section-title em {
+      font-weight: 400;
+      color: var(--terra);
+    }
+
+    .body-copy {
+      color: #746b63;
+      font-size: clamp(14px, 1.2vw, 16px);
+      line-height: 1.95;
+      max-width: 490px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      min-height: 54px;
+      padding: 16px 25px;
+      border: 1px solid transparent;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      transition:
+        background .3s,
+        color .3s,
+        border-color .3s,
+        transform .3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn svg {
+      width: 17px;
+      height: 17px;
+      flex: none;
+      transition: transform .3s;
+    }
+
+    .btn:hover svg {
+      transform: translate(3px,-3px);
+    }
+
+    .btn-light {
+      background: var(--cream);
+      color: var(--ink);
+    }
+
+    .btn-light:hover {
+      background: white;
+    }
+
+    .btn-dark {
+      background: var(--espresso);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: var(--terra);
+    }
+
+    .btn-outline {
+      border-color: currentColor;
+      background: transparent;
+      color: inherit;
+    }
+
+    .btn-outline:hover {
+      background: var(--cream);
+      color: var(--ink);
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 30px;
+      padding-bottom: 11px;
+      border-bottom: 1px solid currentColor;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      transition: gap .3s, color .3s;
+    }
+
+    .text-link:hover {
+      gap: 42px;
+      color: var(--terra);
+    }
+
+    .text-link svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    /* =========================================
+       UPDATED NAVIGATION
+       Smaller links, tighter spacing,
+       compact button and logo.
+    ========================================= */
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      height: var(--header-height);
+      color: white;
+      transition:
+        height .4s,
+        background .4s,
+        color .4s,
+        box-shadow .4s;
+    }
+
+    .site-header.scrolled {
+      height: 70px;
+      color: var(--ink);
+      background: rgba(250,247,240,.97);
+      box-shadow: 0 1px 0 var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      height: 100%;
+      width: min(
+        calc(100% - var(--gutter) * 2),
+        1500px
+      );
+      margin: auto;
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
+      align-items: center;
+      gap: 18px;
+    }
+
+    .header-brand {
+      justify-self: start;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-width: 0;
+    }
+
+    .header-logo {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      transition: width .4s, height .4s;
+    }
+
+    .site-header.scrolled .header-logo {
+      width: 41px;
+      height: 41px;
+    }
+
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -.035em;
+      white-space: nowrap;
+    }
+
+    .brand-name small {
+      display: block;
+      font: 500 7px/1.5 var(--mono);
+      letter-spacing: .19em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(13px,1.7vw,25px);
+    }
+
+    .desktop-nav a {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .075em;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: .9;
+      transition: opacity .25s;
+    }
+
+    .desktop-nav a:hover {
+      opacity: .55;
+    }
+
+    .header-action {
+      justify-self: end;
+    }
+
+    .header-action .btn {
+      min-height: 37px;
+      padding: 9px 14px;
+      gap: 11px;
+      font-size: 9px;
+      letter-spacing: .075em;
+    }
+
+    .header-action .btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .site-header.scrolled .header-action .btn {
+      background: var(--espresso);
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 1.5px;
+      background: currentColor;
+      transition: transform .3s, opacity .3s;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:first-child {
+      transform: translateY(3.75px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:last-child {
+      transform: translateY(-3.75px) rotate(-45deg);
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 99;
+      background: var(--paper);
+      color: var(--ink);
+      padding: 40px var(--gutter);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-15px);
+      transition: opacity .3s, transform .3s, visibility .3s;
+      overflow-y: auto;
+    }
+
+    .mobile-nav.open {
+      visibility: visible;
+      opacity: 1;
+      transform: none;
+    }
+
+    .mobile-nav a:not(.btn) {
+      font: 400 clamp(27px,6vw,42px)/1.25 var(--serif);
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mobile-nav .btn {
+      margin-top: 30px;
+      align-self: flex-start;
+    }
+
+    /* =========================================
+       UPDATED HERO
+       Increased desktop left margin.
+       Maintains safe width and top clearance.
+    ========================================= */
+
+    .hero {
+      min-height: 760px;
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: white;
+      background: var(--espresso);
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero-image-wrap {
+      position: absolute;
+      inset: -7% 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.05);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(24,17,14,.88) 0%,
+          rgba(24,17,14,.66) 42%,
+          rgba(24,17,14,.18) 100%
+        ),
+        linear-gradient(
+          0deg,
+          rgba(24,17,14,.45),
+          transparent 40%
+        );
+    }
+
+    .hero-content {
+      width: 100%;
+      padding-top: calc(var(--header-height) + 90px);
+      padding-bottom: 145px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-copy {
+      max-width: 800px;
+      margin-left: var(--hero-extra-left);
+      width: min(
+        800px,
+        calc(100% - var(--hero-extra-left))
+      );
+    }
+
+    .hero .eyebrow {
+      color: #e4c7ad;
+    }
+
+    .hero h1 {
+      font: 400 clamp(66px, 8.5vw, 134px)/1.02 var(--serif);
+      letter-spacing: -.065em;
+      margin: 25px 0 30px;
+      max-width: 850px;
+      overflow-wrap: normal;
+    }
+
+    .hero h1 em {
+      font-weight: 400;
+      color: #e6b69b;
+    }
+
+    .hero-description {
+      font-size: clamp(15px,1.35vw,18px);
+      line-height: 1.85;
+      max-width: 420px;
+      color: rgba(255,255,255,.85);
+      margin: 0 0 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .hero-bottom {
+      position: absolute;
+      bottom: 37px;
+      left: var(--gutter);
+      right: var(--gutter);
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      z-index: 3;
+      gap: 20px;
+    }
+
+    .hero-bottom-label {
+      font: 500 10px/1.7 var(--mono);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      opacity: .75;
+    }
+
+    .scroll-cue {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font: 500 10px var(--mono);
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      height: 45px;
+      width: 1px;
+      background: rgba(255,255,255,.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-line::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      top: -50%;
+      left: 0;
+      background: white;
+      animation: scrollDown 2.2s infinite;
+    }
+
+    @keyframes scrollDown {
+      to { top: 100%; }
+    }
+
+    /* TICKER */
+
+    .ticker {
+      overflow: hidden;
+      background: var(--terra);
+      color: var(--paper);
+      padding: 18px 0;
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 35s linear infinite;
+    }
+
+    .ticker-group {
+      display: flex;
+      align-items: center;
+      flex: none;
+    }
+
+    .ticker-group span {
+      display: inline-flex;
+      align-items: center;
+      gap: 32px;
+      padding-right: 32px;
+      font: 500 10px var(--mono);
+      letter-spacing: .19em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .ticker-group span::after {
+      content: "✳";
+      font-size: 18px;
+    }
+
+    @keyframes marquee {
+      to { transform: translateX(-50%); }
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: clamp(110px, 12vw, 190px) 0;
+      overflow: hidden;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: clamp(50px, 9vw, 150px);
+      align-items: center;
+    }
+
+    .intro-visual {
+      position: relative;
+      padding-right: 15%;
+      padding-bottom: 15%;
+    }
+
+    .intro-main-image {
+      aspect-ratio: 4/5;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .intro-detail-image {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 45%;
+      aspect-ratio: 4/4.8;
+      object-fit: cover;
+      border: 9px solid var(--paper);
+    }
+
+    .intro-caption {
+      position: absolute;
+      top: 15px;
+      right: -15px;
+      writing-mode: vertical-rl;
+      font: 500 9px var(--mono);
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .intro-copy .section-title {
+      max-width: 650px;
+    }
+
+    .intro-copy .body-copy {
+      margin-bottom: 35px;
+    }
+
+    .mini-divider {
+      width: 75px;
+      height: 1px;
+      background: var(--terra);
+      margin: 30px 0;
+    }
+
+    /* EXPERIENCE */
+
+    .experience {
+      background: var(--espresso);
+      color: var(--cream);
+      padding: clamp(95px,10vw,150px) 0;
+      overflow: hidden;
+    }
+
+    .experience-heading {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      align-items: end;
+      gap: 40px;
+      margin-bottom: 75px;
+    }
+
+    .experience-heading .section-title {
+      max-width: 820px;
+    }
+
+    .experience-heading .section-title em {
+      color: #d99c7b;
+    }
+
+    .experience-heading .body-copy {
+      color: #c3b5a8;
+      justify-self: end;
+      max-width: 320px;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .85fr .85fr;
+      gap: clamp(15px,2.5vw,35px);
+      align-items: start;
+    }
+
+    .experience-card:nth-child(2) {
+      margin-top: 105px;
+    }
+
+    .experience-card:nth-child(3) {
+      margin-top: 45px;
+    }
+
+    .image-frame {
+      overflow: hidden;
+      position: relative;
+      background: #594236;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s var(--ease);
+    }
+
+    .image-frame:hover img {
+      transform: scale(1.055);
+    }
+
+    .experience-card:nth-child(1) .image-frame {
+      aspect-ratio: 4/5;
+    }
+
+    .experience-card:nth-child(2) .image-frame {
+      aspect-ratio: 4/5.6;
+    }
+
+    .experience-card:nth-child(3) .image-frame {
+      aspect-ratio: 4/4.5;
+    }
+
+    .experience-card-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 19px;
+      border-top: 1px solid rgba(255,255,255,.3);
+      margin-top: 20px;
+    }
+
+    .experience-card-label h3 {
+      font: 400 clamp(20px,2.1vw,31px) var(--serif);
+      margin: 0;
+    }
+
+    .experience-card-label span {
+      font: 400 10px var(--mono);
+      opacity: .55;
+    }
+
+    /* STATEMENT */
+
+    .statement {
+      position: relative;
+      height: min(90svh, 900px);
+      min-height: 520px;
+      background: #3b2b23;
+      color: white;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      isolation: isolate;
+    }
+
+    .statement-image {
+      position: absolute;
+      inset: -15% 0;
+      width: 100%;
+      height: 130%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .statement::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: rgba(22,15,12,.57);
+    }
+
+    .statement-content {
+      padding: 70px var(--gutter);
+      max-width: 1050px;
+    }
+
+    .statement-content .eyebrow {
+      color: #ebc8ad;
+    }
+
+    .statement h2 {
+      font: 400 clamp(46px,7.5vw,112px)/1.13 var(--serif);
+      letter-spacing: -.055em;
+      margin: 30px 0;
+    }
+
+    .statement h2 em {
+      color: #e9bba2;
+      font-weight: 400;
+    }
+
+    .statement p {
+      max-width: 430px;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 1.9;
+      color: rgba(255,255,255,.82);
+    }
+
+    /* MOMENTS */
+
+    .moments {
+      padding: clamp(100px,12vw,180px) 0;
+      background: var(--cream);
+      overflow: hidden;
+    }
+
+    .moments-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(35px,8vw,130px);
+      align-items: center;
+    }
+
+    .moments-copy {
+      max-width: 530px;
+    }
+
+    .moments-copy .body-copy {
+      margin-bottom: 35px;
+    }
+
+    .moments-visual {
+      position: relative;
+      padding-left: 13%;
+      padding-bottom: 13%;
+    }
+
+    .moments-visual .large {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    .moments-visual .small {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 45%;
+      aspect-ratio: 4/4.4;
+      object-fit: cover;
+      border: 9px solid var(--cream);
+    }
+
+    .moments-number {
+      font: 400 clamp(90px,12vw,180px)/1 var(--serif);
+      color: rgba(183,109,79,.13);
+      position: absolute;
+      right: -10px;
+      bottom: -70px;
+      pointer-events: none;
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      padding: clamp(100px,11vw,165px) 0;
+      background: var(--paper);
+      overflow: hidden;
+    }
+
+    .gallery-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 35px;
+      margin-bottom: 55px;
+    }
+
+    .gallery-heading .section-title {
+      margin-bottom: 0;
+    }
+
+    .gallery-heading .body-copy {
+      max-width: 300px;
+      margin: 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12,1fr);
+      gap: clamp(10px,1.5vw,22px);
+    }
+
+    .gallery-item {
+      position: relative;
+      padding: 0;
+      border: 0;
+      overflow: hidden;
+      background: var(--sand);
+      display: block;
+      width: 100%;
+      color: white;
+      cursor: zoom-in;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .9s var(--ease);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.065);
+    }
+
+    .gallery-item::after {
+      content: "+";
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,.75);
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      font-weight: 300;
+      background: rgba(0,0,0,.2);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .3s, transform .3s;
+    }
+
+    .gallery-item:hover::after,
+    .gallery-item:focus-visible::after {
+      opacity: 1;
+      transform: none;
+    }
+
+    .gallery-item:nth-child(6n+1) {
+      grid-column: span 7;
+      aspect-ratio: 7/5;
+    }
+
+    .gallery-item:nth-child(6n+2) {
+      grid-column: span 5;
+      aspect-ratio: 5/5;
+    }
+
+    .gallery-item:nth-child(6n+3),
+    .gallery-item:nth-child(6n+4),
+    .gallery-item:nth-child(6n+5) {
+      grid-column: span 4;
+      aspect-ratio: 4/4.6;
+    }
+
+    .gallery-item:nth-child(6n+6) {
+      grid-column: span 12;
+      aspect-ratio: 12/5;
+    }
+
+    .gallery-item[hidden] {
+      display: none !important;
+    }
+
+    .gallery-footer {
+      display: flex;
+      justify-content: center;
+      margin-top: 55px;
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(16,12,10,.97);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 75px 70px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      color: white;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.4);
+      display: grid;
+      place-items: center;
+      transition: background .25s;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: rgba(255,255,255,.16);
+    }
+
+    .lightbox-close {
+      top: 24px;
+      right: 26px;
+      width: 42px;
+      height: 42px;
+      font-size: 24px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+      width: 43px;
+      height: 55px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+    }
+
+    .lightbox-prev { left: 15px; }
+    .lightbox-next { right: 15px; }
+
+    .lightbox-count {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font: 11px var(--mono);
+      letter-spacing: .1em;
+    }
+
+    /* VISIT */
+
+    .visit {
+      background: var(--sand);
+      padding: clamp(100px,11vw,165px) 0;
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: clamp(40px,8vw,125px);
+      align-items: center;
+    }
+
+    .visit-copy .section-title {
+      max-width: 560px;
+    }
+
+    .visit-copy .body-copy {
+      margin-bottom: 35px;
+    }
+
+    .visit-location {
+      padding: 25px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin: 30px 0;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .visit-location svg {
+      width: 23px;
+      height: 23px;
+      color: var(--terra);
+      flex: none;
+    }
+
+    .visit-location strong {
+      display: block;
+      font: 600 15px var(--sans);
+      margin-bottom: 6px;
+    }
+
+    .visit-location span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .visit-map {
+      min-height: 480px;
+      position: relative;
+      background: #d4c8b9;
+      overflow: hidden;
+    }
+
+    .visit-map iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(.45) sepia(.15);
+    }
+
+    .map-tag {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      right: 25px;
+      background: var(--paper);
+      padding: 19px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.12);
+    }
+
+    .map-tag strong {
+      font: 500 18px var(--serif);
+    }
+
+    .map-tag a {
+      font: 700 10px var(--sans);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      white-space: nowrap;
+    }
+
+    /* CLOSING */
+
+    .closing {
+      position: relative;
+      background: var(--espresso);
+      color: var(--paper);
+      text-align: center;
+      padding: clamp(105px,13vw,200px) var(--gutter);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .closing::before {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      z-index: -1;
+      box-shadow:
+        0 0 0 90px rgba(255,255,255,.018),
+        0 0 0 180px rgba(255,255,255,.012);
+    }
+
+    .closing .eyebrow {
+      color: #dca889;
+    }
+
+    .closing h2 {
+      font: 400 clamp(55px,8vw,120px)/1.09 var(--serif);
+      letter-spacing: -.055em;
+      margin: 28px auto;
+      max-width: 950px;
+    }
+
+    .closing h2 em {
+      color: #dfaa8e;
+    }
+
+    .closing p {
+      max-width: 420px;
+      margin: 0 auto 38px;
+      color: #c9b9ad;
+      line-height: 1.9;
+      font-size: 15px;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      background: #211915;
+      color: var(--cream);
+      padding: 75px 0 30px;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 75px;
+    }
+
+    .footer-logo {
+      width: 75px;
+      height: 75px;
+      object-fit: contain;
+      margin-bottom: 17px;
+    }
+
+    .footer-brand h3 {
+      font: 400 35px var(--serif);
+      margin: 0 0 12px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: #b3a59b;
+      line-height: 1.8;
+      max-width: 270px;
+    }
+
+    .footer-col h4 {
+      font: 500 10px var(--mono);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #dba98d;
+      margin: 0 0 25px;
+    }
+
+    .footer-col a {
+      display: block;
+      width: fit-content;
+      margin: 0 0 15px;
+      font-size: 13px;
+      color: #c7bab0;
+      transition: color .25s;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,.13);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #9e8f84;
+      font: 10px var(--mono);
+      letter-spacing: .06em;
+    }
+
+    /* REVEALS */
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .js-ready .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition:
+        opacity .85s var(--ease),
+        transform .85s var(--ease);
+    }
+
+    .js-ready .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 { transition-delay: .1s !important; }
+    .reveal-delay-2 { transition-delay: .2s !important; }
+    .reveal-delay-3 { transition-delay: .3s !important; }
+
+    /* =========================================
+       RESPONSIVE LAYOUT
+    ========================================= */
+
+    @media (max-width: 1150px) {
+      .desktop-nav {
+        gap: 12px;
+      }
+
+      .desktop-nav a {
+        font-size: 8.5px;
+      }
+
+      .header-inner {
+        gap: 12px;
+      }
+
+      .brand-name {
+        font-size: 16px;
+      }
+
+      .hero-copy {
+        margin-left: clamp(15px, 2vw, 30px);
+        width: calc(100% - 30px);
+      }
+
+      .hero h1 {
+        font-size: clamp(60px, 8vw, 105px);
+      }
+    }
+
+    @media (max-width: 1000px) {
+      :root {
+        --header-height: 70px;
+      }
+
+      .header-inner {
+        grid-template-columns: 1fr auto;
+      }
+
+      .desktop-nav,
+      .header-action {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .site-header.menu-active {
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      .hero-copy {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .intro-grid,
+      .moments-grid,
+      .visit-grid {
+        gap: 55px;
+      }
+
+      .experience-heading {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .experience-heading .body-copy {
+        justify-self: start;
+      }
+
+      .experience-card:nth-child(2) {
+        margin-top: 65px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      :root {
+        --gutter: 24px;
+      }
+
+      .hero {
+        min-height: 690px;
+        min-height: 100svh;
+        text-align: center;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(
+            0deg,
+            rgba(24,17,14,.75),
+            rgba(24,17,14,.55) 60%,
+            rgba(24,17,14,.55)
+          );
+      }
+
+      .hero-content {
+        padding-top: 165px;
+        padding-bottom: 120px;
+      }
+
+      .hero-copy {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 650px;
+      }
+
+      .hero h1 {
+        font-size: clamp(55px,12vw,90px);
+        margin: 23px 0 25px;
+      }
+
+      .hero .eyebrow {
+        justify-content: center;
+      }
+
+      .hero-description {
+        margin-inline: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-bottom {
+        bottom: 25px;
+      }
+
+      .hero-bottom-label {
+        text-align: left;
+      }
+
+      .intro-grid,
+      .moments-grid,
+      .visit-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .intro-visual {
+        max-width: 520px;
+        margin: auto;
+      }
+
+      .intro-copy {
+        max-width: 650px;
+      }
+
+      .moments-copy {
+        order: 1;
+      }
+
+      .moments-visual {
+        order: 2;
+        max-width: 520px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 18px;
+      }
+
+      .experience-card:nth-child(2) {
+        margin-top: 65px;
+      }
+
+      .experience-card:nth-child(3) {
+        grid-column: 1 / -1;
+        margin-top: 0;
+        width: 70%;
+        margin-inline: auto;
+      }
+
+      .gallery-heading {
+        display: block;
+      }
+
+      .gallery-heading .body-copy {
+        margin-top: 25px;
+      }
+
+      .gallery-item:nth-child(n) {
+        grid-column: span 6;
+        aspect-ratio: 4/5;
+      }
+
+      .gallery-item:nth-child(5n+1) {
+        grid-column: span 12;
+        aspect-ratio: 6/4;
+      }
+
+      .visit-map {
+        min-height: 420px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --gutter: 20px;
+      }
+
+      .brand-name {
+        font-size: 16px;
+      }
+
+      .header-logo {
+        width: 43px;
+        height: 43px;
+      }
+
+      .hero h1 {
+        font-size: clamp(48px,12.5vw,65px);
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .hero-buttons {
+        gap: 10px;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .hero-bottom-label {
+        font-size: 8px;
+      }
+
+      .scroll-cue {
+        font-size: 8px;
+      }
+
+      .section-title {
+        font-size: clamp(39px,10vw,55px);
+      }
+
+      .intro,
+      .moments,
+      .gallery,
+      .visit {
+        padding-block: 85px;
+      }
+
+      .intro-caption {
+        display: none;
+      }
+
+      .experience {
+        padding-block: 85px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card:nth-child(n) {
+        width: 100%;
+        margin: 0;
+        grid-column: auto;
+      }
+
+      .experience-card:nth-child(1) .image-frame,
+      .experience-card:nth-child(2) .image-frame,
+      .experience-card:nth-child(3) .image-frame {
+        aspect-ratio: 5/4.4;
+      }
+
+      .experience-heading {
+        margin-bottom: 45px;
+      }
+
+      .statement {
+        min-height: 570px;
+      }
+
+      .statement h2 {
+        font-size: clamp(43px,11vw,65px);
+      }
+
+      .gallery-item:nth-child(n) {
+        grid-column: span 6;
+        aspect-ratio: 4/5;
+      }
+
+      .gallery-item:nth-child(5n+1) {
+        grid-column: span 12;
+        aspect-ratio: 5/4;
+      }
+
+      .visit-map {
+        min-height: 350px;
+      }
+
+      .map-tag {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 14px;
+      }
+
+      .map-tag strong {
+        font-size: 15px;
+      }
+
+      .map-tag a {
+        font-size: 9px;
+      }
+
+      .footer-main {
+        gap: 35px 20px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .lightbox {
+        padding: 70px 12px;
+      }
+
+      .lightbox-prev,
+      .lightbox-next {
+        width: 35px;
+        height: 45px;
+        background: rgba(0,0,0,.5);
+      }
+
+      .lightbox-prev { left: 5px; }
+      .lightbox-next { right: 5px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .js-ready .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SVG ICON DEFINITIONS -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="arrow-up-right" viewBox="0 0 24 24">
+      <path d="M5 19L19 5M7 5h12v12"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="pin" viewBox="0 0 24 24">
+      <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"/>
+      <circle cx="12" cy="10" r="2.5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"/>
+    </symbol>
+  </svg>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+
+      <a href="#home" class="header-brand" aria-label="Cariño Coffee Bar Home">
+        <img src="carinologo.webp" alt="Cariño Coffee Bar logo"
+          class="header-logo">
+        <span class="brand-name">
+          Cariño
+          <small>Coffee Bar</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#story">Our Story</a>
+        <a href="#experience">Experience</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visit">Visit Us</a>
+      </nav>
+
+      <div class="header-action">
+        <a class="btn btn-light maps-link"
+          href="https://www.google.com/maps/place/Cari%C3%B1o+Coffee+Bar/@32.2670329,-110.9263508,17z"
+          target="_blank" rel="noopener noreferrer">
+          Get Directions
+          <svg><use href="#arrow-up-right"/></svg>
+        </a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="mobileNav">
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION -->
+  <nav class="mobile-nav" id="mobileNav"
+    aria-label="Mobile navigation" aria-hidden="true">
+    <a href="#home">Home</a>
+    <a href="#story">Our Story</a>
+    <a href="#experience">Experience</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#visit">Visit Us</a>
+    <a class="btn btn-dark maps-link"
+      href="https://www.google.com/maps/place/Cari%C3%B1o+Coffee+Bar/@32.2670329,-110.9263508,17z"
+      target="_blank" rel="noopener noreferrer">
+      Get Directions
+      <svg><use href="#arrow-up-right"/></svg>
+    </a>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+      <div class="hero-image-wrap">
+        <img
+          class="hero-image"
+          id="heroImage"
+          src="carino1.jpg"
+          alt="Cariño Coffee Bar photography"
+          fetchpriority="high">
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-copy">
+
+          <span class="eyebrow">
+            Tucson, Arizona · Coffee & Connection
+          </span>
+
+          <h1>
+            A little<br>
+            coffee. A lot<br>
+            of <em>cariño.</em>
+          </h1>
+
+          <p class="hero-description">
+            For the slow mornings, spontaneous detours,
+            and conversations worth staying for.
+            Come find your moment at Cariño.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-light maps-link"
+              href="https://www.google.com/maps/place/Cari%C3%B1o+Coffee+Bar/@32.2670329,-110.9263508,17z"
+              target="_blank" rel="noopener noreferrer">
+              Get Directions
+              <svg><use href="#arrow-up-right"/></svg>
+            </a>
+
+            <a class="btn btn-outline" href="#story">
+              Explore Cariño
+              <svg><use href="#arrow-up-right"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <span class="hero-bottom-label">
+          Made for the moments<br>in between.
+        </span>
+
+        <a href="#story" class="scroll-cue">
+          Scroll to explore
+          <span class="scroll-line"></span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-label="Coffee, community and good moments">
+      <div class="ticker-track" aria-hidden="true">
+        <div class="ticker-group">
+          <span>Good Coffee</span>
+          <span>Good Company</span>
+          <span>Little Moments</span>
+          <span>Made With Cariño</span>
+          <span>Tucson, Arizona</span>
+        </div>
+        <div class="ticker-group">
+          <span>Good Coffee</span>
+          <span>Good Company</span>
+          <span>Little Moments</span>
+          <span>Made With Cariño</span>
+          <span>Tucson, Arizona</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STORY -->
+    <section class="intro" id="story">
+      <div class="container intro-grid">
+
+        <div class="intro-visual reveal">
+          <img
+            class="intro-main-image"
+            src="carino2.jpg"
+            alt="A moment at Cariño Coffee Bar"
+            loading="lazy">
+
+          <img
+            class="intro-detail-image"
+            src="carino3.jpg"
+            alt="A detail from Cariño Coffee Bar"
+            loading="lazy">
+
+          <span class="intro-caption">
+            A little place to slow down
+          </span>
+        </div>
+
+        <div class="intro-copy">
+          <span class="eyebrow reveal">01 / The Feeling</span>
+
+          <h2 class="section-title reveal">
+            Some places<br>
+            just feel like<br>
+            <em>your kind of place.</em>
+          </h2>
+
+          <div class="mini-divider reveal"></div>
+
+          <p class="body-copy reveal">
+            You know the feeling. The first sip that makes
+            you slow down. The conversation that lasts a
+            little longer. The unexpected stop that becomes
+            your favorite part of the day.
+          </p>
+
+          <p class="body-copy reveal">
+            That's the kind of moment we hope you'll find
+            at Cariño Coffee Bar. Nothing complicated.
+            Just coffee, connection, and a reason to stay
+            a little while.
+          </p>
+
+          <a href="#experience" class="text-link reveal">
+            Discover the experience
+            <svg><use href="#arrow-up-right"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+      <div class="container">
+
+        <div class="experience-heading">
+          <div>
+            <span class="eyebrow reveal">
+              02 / Coffee & Everything Around It
+            </span>
+
+            <h2 class="section-title reveal">
+              It's more than<br>
+              <em>what's in the cup.</em>
+            </h2>
+          </div>
+
+          <p class="body-copy reveal">
+            Sometimes the best part of coffee is everything
+            that happens around it. The people, the pauses,
+            the little details.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+
+          <article class="experience-card reveal">
+            <div class="image-frame">
+              <img src="carino4.jpg"
+                alt="Coffee bar photography"
+                loading="lazy">
+            </div>
+            <div class="experience-card-label">
+              <h3>The first sip</h3>
+              <span>01 / 03</span>
+            </div>
+          </article>
+
+          <article class="experience-card reveal reveal-delay-1">
+            <div class="image-frame">
+              <img src="carino5.jpg"
+                alt="Cariño café atmosphere"
+                loading="lazy">
+            </div>
+            <div class="experience-card-label">
+              <h3>The little details</h3>
+              <span>02 / 03</span>
+            </div>
+          </article>
+
+          <article class="experience-card reveal reveal-delay-2">
+            <div class="image-frame">
+              <img src="carino6.jpg"
+                alt="A moment from Cariño Coffee Bar"
+                loading="lazy">
+            </div>
+            <div class="experience-card-label">
+              <h3>The good moments</h3>
+              <span>03 / 03</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CINEMATIC STATEMENT -->
+    <section class="statement" aria-labelledby="statementTitle">
+
+      <img
+        class="statement-image"
+        id="statementImage"
+        src="carino7.jpg"
+        alt="Cariño Coffee Bar atmosphere"
+        loading="lazy">
+
+      <div class="statement-content">
+        <span class="eyebrow reveal">
+          Stay A Little Longer
+        </span>
+
+        <h2 id="statementTitle" class="reveal">
+          The best moments<br>
+          are rarely <em>rushed.</em>
+        </h2>
+
+        <p class="reveal">
+          Take the scenic route. Put your phone away.
+          Have another conversation. There's always
+          room for a little more of the good stuff.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- MOMENTS -->
+    <section class="moments">
+      <div class="container moments-grid">
+
+        <div class="moments-copy">
+          <span class="eyebrow reveal">
+            03 / The Little Things
+          </span>
+
+          <h2 class="section-title reveal">
+            Your day looks<br>
+            better with a<br>
+            <em>coffee break.</em>
+          </h2>
+
+          <div class="mini-divider reveal"></div>
+
+          <p class="body-copy reveal">
+            Between the places you're going and the things
+            you have to do, make a little space for yourself.
+          </p>
+
+          <p class="body-copy reveal">
+            Maybe it's a quick stop. Maybe it's an
+            afternoon that turns into something more.
+            Either way, we think good coffee deserves
+            a place in your day.
+          </p>
+
+          <a href="#gallery" class="text-link reveal">
+            See life at Cariño
+            <svg><use href="#arrow-up-right"/></svg>
+          </a>
+        </div>
+
+        <div class="moments-visual reveal">
+          <img class="large"
+            src="carino8.jpg"
+            alt="Cariño Coffee Bar visual story"
+            loading="lazy">
+
+          <img class="small"
+            src="carino9.jpg"
+            alt="A detail of the Cariño experience"
+            loading="lazy">
+
+          <span class="moments-number" aria-hidden="true">
+            03
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+
+        <div class="gallery-heading">
+          <div>
+            <span class="eyebrow reveal">
+              04 / Life at Cariño
+            </span>
+
+            <h2 class="section-title reveal">
+              A little look<br>
+              <em>inside our world.</em>
+            </h2>
+          </div>
+
+          <p class="body-copy reveal">
+            A collection of moments, details, and
+            everything that makes a visit worth remembering.
+          </p>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Gallery populated from the provided asset filenames -->
+        </div>
+
+        <div class="gallery-footer">
+          <button class="btn btn-dark" id="galleryMore"
+            type="button" aria-controls="galleryGrid">
+            View More Moments
+            <svg><use href="#arrow-up-right"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="visit" id="visit">
+      <div class="container visit-grid">
+
+        <div class="visit-copy">
+          <span class="eyebrow reveal">
+            05 / Come Find Us
+          </span>
+
+          <h2 class="section-title reveal">
+            Around the corner<br>
+            from your next<br>
+            <em>favorite moment.</em>
+          </h2>
+
+          <p class="body-copy reveal">
+            Whether you're exploring Tucson or looking
+            for a new coffee stop, we'd love to see you.
+            Find your way to Cariño and make yourself
+            at home.
+          </p>
+
+          <div class="visit-location reveal">
+            <svg><use href="#pin"/></svg>
+
+            <div>
+              <strong>Cariño Coffee Bar</strong>
+              <span>Tucson, Arizona, USA</span>
+            </div>
+          </div>
+
+          <a class="btn btn-dark maps-link reveal"
+            href="https://www.google.com/maps/place/Cari%C3%B1o+Coffee+Bar/@32.2670329,-110.9263508,17z"
+            target="_blank" rel="noopener noreferrer">
+            Get Directions
+            <svg><use href="#arrow-up-right"/></svg>
+          </a>
+        </div>
+
+        <div class="visit-map reveal">
+          <iframe
+            title="Map showing Cariño Coffee Bar in Tucson"
+            src="https://maps.google.com/maps?q=32.2670329,-110.9263508&z=16&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+
+          <div class="map-tag">
+            <strong>Find your way to Cariño.</strong>
+
+            <a class="maps-link"
+              href="https://www.google.com/maps/place/Cari%C3%B1o+Coffee+Bar/@32.2670329,-110.9263508,17z"
+              target="_blank" rel="noopener noreferrer">
+              Open Maps ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="closing">
+
+      <span class="eyebrow reveal">
+        See You Soon
+      </span>
+
+      <h2 class="reveal">
+        Come for the coffee.<br>
+        Stay for <em>the feeling.</em>
+      </h2>
+
+      <p class="reveal">
+        Good things happen when you make time for
+        the little things. Your next coffee moment
+        is waiting.
+      </p>
+
+      <a class="btn btn-light maps-link reveal"
+        href="https://www.google.com/maps/place/Cari%C3%B1o+Coffee+Bar/@32.2670329,-110.9263508,17z"
+        target="_blank" rel="noopener noreferrer">
+        Come Visit Cariño
+        <svg><use href="#arrow-up-right"/></svg>
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+          <img
+            class="footer-logo"
+            src="carinologo.webp"
+            alt="Cariño Coffee Bar logo"
+            loading="lazy">
+
+          <h3>Cariño Coffee Bar</h3>
+
+          <p>
+            A little coffee. A lot of cariño.<br>
+            Tucson, Arizona.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="#home">Home</a>
+          <a href="#story">Our Story</a>
+          <a href="#experience">The Experience</a>
+          <a href="#gallery">Gallery</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Find Us</h4>
+          <a href="#visit">Visit Cariño</a>
+
+          <a class="maps-link"
+            href="https://www.google.com/maps/place/Cari%C3%B1o+Coffee+Bar/@32.2670329,-110.9263508,17z"
+            target="_blank" rel="noopener noreferrer">
+            Google Maps ↗
+          </a>
+
+          <a href="#home">Back to Top ↑</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>
+          © <span id="year"></span> Cariño Coffee Bar.
+          All rights reserved.
+        </span>
+
+        <span>
+          Made for the little moments.
+        </span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Photo gallery viewer"
+    aria-hidden="true">
+
+    <button class="lightbox-close" id="lightboxClose"
+      type="button" aria-label="Close gallery">
+      ×
+    </button>
+
+    <button class="lightbox-prev" id="lightboxPrev"
+      type="button" aria-label="Previous photo">
+      ‹
+    </button>
+
+    <img class="lightbox-image" id="lightboxImage"
+      src="carino10.jpg" alt="Cariño Coffee Bar gallery photo">
+
+    <button class="lightbox-next" id="lightboxNext"
+      type="button" aria-label="Next photo">
+      ›
+    </button>
+
+    <span class="lightbox-count" id="lightboxCount"></span>
+  </div>
+
+  <script>
+    "use strict";
+
+    /* CONFIGURATION */
+
+    const MAPS_URL =
+      "https://www.google.com/maps/place/" +
+      "Cari%C3%B1o+Coffee+Bar/" +
+      "@32.2670329,-110.9263508,17z";
+
+    const prefersReducedMotion =
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+    const isTouch =
+      window.matchMedia("(pointer: coarse)").matches;
+
+    document.documentElement.classList.add("js-ready");
+
+    /* ASSET CONFIGURATION */
+
+    const GALLERY_IMAGE_NUMBERS = Array.from(
+      { length: 49 },
+      (_, index) => index + 10
+    );
+
+    const galleryAssets = GALLERY_IMAGE_NUMBERS.map(
+      number => ({
+        src: `carino${number}.jpg`,
+        alt: `Cariño Coffee Bar gallery photo ${number}`
+      })
+    );
+
+    /* BASIC SETUP */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    document.querySelectorAll(".maps-link").forEach(
+      link => {
+        link.href = MAPS_URL;
+      }
+    );
+
+    /* NAVIGATION */
+
+    const header =
+      document.getElementById("siteHeader");
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mobileNav =
+      document.getElementById("mobileNav");
+
+    let menuOpen = false;
+
+    function updateHeader() {
+      const scrolled =
+        window.scrollY > 35 || menuOpen;
+
+      header.classList.toggle(
+        "scrolled", scrolled
+      );
+    }
+
+    function setMenu(open) {
+      menuOpen = open;
+
+      menuToggle.setAttribute(
+        "aria-expanded", String(open)
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        open ? "Close navigation" : "Open navigation"
+      );
+
+      mobileNav.setAttribute(
+        "aria-hidden", String(!open)
+      );
+
+      mobileNav.classList.toggle("open", open);
+      header.classList.toggle("menu-active", open);
+      document.body.classList.toggle("menu-open", open);
+
+      if ("inert" in mobileNav) {
+        mobileNav.inert = !open;
+      }
+
+      updateHeader();
+
+      if (open) {
+        mobileNav.querySelector("a")?.focus();
+      } else {
+        menuToggle.focus();
+      }
+    }
+
+    if ("inert" in mobileNav) {
+      mobileNav.inert = true;
+    }
+
+    menuToggle.addEventListener("click", () => {
+      setMenu(!menuOpen);
+    });
+
+    mobileNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (menuOpen) setMenu(false);
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1000 && menuOpen) {
+        setMenu(false);
+      }
+    });
+
+    window.addEventListener(
+      "scroll", updateHeader,
+      { passive: true }
+    );
+
+    updateHeader();
+
+    /* SCROLL REVEALS */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    if (
+      "IntersectionObserver" in window &&
+      !prefersReducedMotion.matches
+    ) {
+      const revealObserver = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.08,
+          rootMargin: "0px 0px -30px 0px"
+        }
+      );
+
+      revealElements.forEach(element => {
+        revealObserver.observe(element);
+      });
+    } else {
+      revealElements.forEach(element => {
+        element.classList.add("visible");
+      });
+    }
+
+    /* SMOOTH PARALLAX */
+
+    const heroImage =
+      document.getElementById("heroImage");
+
+    const statementImage =
+      document.getElementById("statementImage");
+
+    const statementSection =
+      document.querySelector(".statement");
+
+    let ticking = false;
+
+    function parallaxEnabled() {
+      return (
+        !prefersReducedMotion.matches &&
+        !isTouch &&
+        window.innerWidth > 767
+      );
+    }
+
+    function updateParallax() {
+      ticking = false;
+
+      if (!parallaxEnabled()) {
+        heroImage.style.transform = "";
+        statementImage.style.transform = "";
+        return;
+      }
+
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      if (scrollY < viewportHeight * 1.5) {
+        const offset = Math.min(
+          scrollY * .16, 140
+        );
+
+        heroImage.style.transform =
+          `translate3d(0,${offset}px,0) scale(1.05)`;
+      }
+
+      const rect =
+        statementSection.getBoundingClientRect();
+
+      if (
+        rect.bottom > 0 &&
+        rect.top < viewportHeight
+      ) {
+        const progress =
+          (viewportHeight - rect.top) /
+          (viewportHeight + rect.height);
+
+        const offset = (progress - .5) * 110;
+
+        statementImage.style.transform =
+          `translate3d(0,${offset}px,0)`;
+      }
+    }
+
+    function requestParallax() {
+      if (ticking) return;
+
+      ticking = true;
+      requestAnimationFrame(updateParallax);
+    }
+
+    window.addEventListener(
+      "scroll", requestParallax,
+      { passive: true }
+    );
+
+    window.addEventListener(
+      "resize", requestParallax,
+      { passive: true }
+    );
+
+    if (prefersReducedMotion.addEventListener) {
+      prefersReducedMotion.addEventListener(
+        "change", requestParallax
+      );
+    }
+
+    requestParallax();
+
+    /* INTERACTIVE GALLERY */
+
+    const galleryGrid =
+      document.getElementById("galleryGrid");
+
+    const galleryMore =
+      document.getElementById("galleryMore");
+
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const lightboxCount =
+      document.getElementById("lightboxCount");
+
+    const lightboxClose =
+      document.getElementById("lightboxClose");
+
+    const lightboxPrev =
+      document.getElementById("lightboxPrev");
+
+    const lightboxNext =
+      document.getElementById("lightboxNext");
+
+    const BATCH_SIZE = 9;
+
+    let visibleCount = 0;
+    let currentIndex = 0;
+    let lastFocusedElement = null;
+
+    const galleryItems = [];
+
+    function makeGalleryItem(asset, index) {
+      const button =
+        document.createElement("button");
+
+      button.type = "button";
+      button.className = "gallery-item";
+      button.setAttribute(
+        "aria-label",
+        `Open gallery photo ${index + 1}`
+      );
+
+      const img = document.createElement("img");
+
+      img.src = asset.src;
+      img.alt = asset.alt;
+      img.loading = "lazy";
+      img.decoding = "async";
+
+      img.onerror = () => {
+        button.hidden = true;
+      };
+
+      button.appendChild(img);
+
+      button.addEventListener("click", () => {
+        openLightbox(index);
+      });
+
+      return button;
+    }
+
+    function renderMoreGallery() {
+      const nextCount = Math.min(
+        visibleCount + BATCH_SIZE,
+        galleryAssets.length
+      );
+
+      const fragment =
+        document.createDocumentFragment();
+
+      for (
+        let i = visibleCount;
+        i < nextCount;
+        i++
+      ) {
+        const item = makeGalleryItem(
+          galleryAssets[i], i
+        );
+
+        galleryItems[i] = item;
+        fragment.appendChild(item);
+      }
+
+      galleryGrid.appendChild(fragment);
+
+      visibleCount = nextCount;
+
+      if (visibleCount >= galleryAssets.length) {
+        galleryMore.hidden = true;
+      }
+    }
+
+    galleryMore.addEventListener(
+      "click", renderMoreGallery
+    );
+
+    renderMoreGallery();
+
+    /* LIGHTBOX */
+
+    function availableGalleryIndices() {
+      return galleryItems
+        .map((item, index) =>
+          item && !item.hidden ? index : -1
+        )
+        .filter(index => index >= 0);
+    }
+
+    function displayLightbox(index) {
+      const indices = availableGalleryIndices();
+
+      if (!indices.length) return;
+
+      currentIndex = index;
+
+      const asset = galleryAssets[index];
+
+      lightboxImage.src = asset.src;
+      lightboxImage.alt = asset.alt;
+
+      const position = indices.indexOf(index);
+
+      lightboxCount.textContent =
+        `${position + 1} / ${indices.length}`;
+    }
+
+    function openLightbox(index) {
+      if (!galleryItems[index] ||
+          galleryItems[index].hidden) return;
+
+      lastFocusedElement =
+        document.activeElement;
+
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+
+      document.body.classList.add(
+        "lightbox-open"
+      );
+
+      displayLightbox(index);
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+
+      lightbox.setAttribute(
+        "aria-hidden", "true"
+      );
+
+      document.body.classList.remove(
+        "lightbox-open"
+      );
+
+      if (lastFocusedElement?.isConnected) {
+        lastFocusedElement.focus();
+      }
+    }
+
+    function changeLightbox(direction) {
+      const indices = availableGalleryIndices();
+
+      if (!indices.length) {
+        closeLightbox();
+        return;
+      }
+
+      const currentPosition =
+        indices.indexOf(currentIndex);
+
+      const nextPosition =
+        (currentPosition + direction +
+          indices.length) % indices.length;
+
+      displayLightbox(indices[nextPosition]);
+    }
+
+    lightboxClose.addEventListener(
+      "click", closeLightbox
+    );
+
+    lightboxPrev.addEventListener(
+      "click", () => changeLightbox(-1)
+    );
+
+    lightboxNext.addEventListener(
+      "click", () => changeLightbox(1)
+    );
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        if (lightbox.classList.contains("open")) {
+          closeLightbox();
+        } else if (menuOpen) {
+          setMenu(false);
+        }
+      }
+
+      if (!lightbox.classList.contains("open")) {
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        changeLightbox(-1);
+      }
+
+      if (event.key === "ArrowRight") {
+        changeLightbox(1);
+      }
+
+      if (event.key === "Tab") {
+        const controls = [
+          lightboxClose,
+          lightboxPrev,
+          lightboxNext
+        ];
+
+        const current =
+          controls.indexOf(document.activeElement);
+
+        if (event.shiftKey && current <= 0) {
+          event.preventDefault();
+          controls[controls.length - 1].focus();
+        } else if (
+          !event.shiftKey &&
+          current === controls.length - 1
+        ) {
+          event.preventDefault();
+          controls[0].focus();
+        }
+      }
+    });
+
+    /* IMAGE FALLBACKS */
+
+    document.querySelectorAll(
+      "img:not(.gallery-item img)"
+    ).forEach(img => {
+      img.addEventListener("error", () => {
+        img.style.opacity = "0";
+        img.setAttribute(
+          "data-image-missing", "true"
+        );
+      });
+    });
+
+    /* INITIALIZATION */
+
+    window.addEventListener("load", () => {
+      updateHeader();
+      requestParallax();
+    });
+
+  </script>
+
+</body>
+</html>
