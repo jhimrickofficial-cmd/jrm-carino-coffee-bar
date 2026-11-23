@@ -222,8 +222,8 @@
     }
 
     /* =========================================
-       UPDATED HEADER
-       Logo only, larger and more readable.
+       HEADER
+       Enlarged logo with no text beside it
     ========================================= */
 
     .site-header {
@@ -388,9 +388,10 @@
     }
 
     /* =========================================
-       UPDATED HERO
-       Reduced excessive top padding.
-       Content sits naturally within the hero.
+       HERO SECTION
+       FINAL FIX:
+       Bottom label now sits below CTA buttons
+       in normal document flow.
     ========================================= */
 
     .hero {
@@ -488,55 +489,28 @@
       gap: 16px;
     }
 
+    /* FIXED: Text is positioned after the buttons,
+       rather than absolutely at the hero bottom. */
+
     .hero-bottom {
-      position: absolute;
-      bottom: 37px;
-      left: var(--gutter);
-      right: var(--gutter);
+      position: relative;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      width: 100%;
+      margin-top: 38px;
+      padding: 0;
       display: flex;
-      justify-content: space-between;
-      align-items: end;
-      z-index: 3;
-      gap: 20px;
+      align-items: center;
+      justify-content: flex-start;
     }
 
     .hero-bottom-label {
+      display: block;
       font: 500 10px/1.7 var(--mono);
       letter-spacing: .14em;
       text-transform: uppercase;
       opacity: .75;
-    }
-
-    .scroll-cue {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      font: 500 10px var(--mono);
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .scroll-line {
-      height: 45px;
-      width: 1px;
-      background: rgba(255,255,255,.5);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .scroll-line::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 50%;
-      top: -50%;
-      left: 0;
-      background: white;
-      animation: scrollDown 2.2s infinite;
-    }
-
-    @keyframes scrollDown {
-      to { top: 100%; }
     }
 
     /* TICKER */
@@ -1375,7 +1349,7 @@
 
       .hero-content {
         padding-top: calc(var(--header-height) + 20px);
-        padding-bottom: 85px;
+        padding-bottom: 65px;
       }
 
       .hero-copy {
@@ -1401,12 +1375,14 @@
         justify-content: center;
       }
 
+      /* MOBILE HERO LABEL FIX */
       .hero-bottom {
-        bottom: 25px;
+        margin-top: 26px;
+        justify-content: center;
       }
 
       .hero-bottom-label {
-        text-align: left;
+        text-align: center;
       }
 
       .intro-grid,
@@ -1512,11 +1488,7 @@
       }
 
       .hero-bottom-label {
-        font-size: 8px;
-      }
-
-      .scroll-cue {
-        font-size: 8px;
+        font-size: 9px;
       }
 
       .section-title {
@@ -1666,7 +1638,7 @@
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
 
-      <!-- UPDATED: Logo only, no text beside it -->
+      <!-- Logo only, no text beside it -->
       <a href="#home" class="header-brand" aria-label="Cariño Coffee Bar Home">
         <img
           src="carinologo.webp"
@@ -1720,7 +1692,9 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- =========================================
+         HERO SECTION - OVERLAP FIXED
+    ========================================= -->
     <section class="hero" id="home">
 
       <div class="hero-image-wrap">
@@ -1751,7 +1725,9 @@
             Come find your moment at Cariño.
           </p>
 
+          <!-- HERO CTA BUTTONS -->
           <div class="hero-buttons">
+
             <a class="btn btn-light maps-link"
               href="https://www.google.com/maps/place/Cari%C3%B1o+Coffee+Bar/@32.2670329,-110.9263508,17z"
               target="_blank" rel="noopener noreferrer">
@@ -1763,20 +1739,18 @@
               Explore Cariño
               <svg><use href="#arrow-up-right"/></svg>
             </a>
+
+          </div>
+
+          <!-- FIXED: TEXT IS NOW BELOW BOTH CTA BUTTONS -->
+          <div class="hero-bottom">
+            <span class="hero-bottom-label">
+              Made for the moments<br>
+              in between.
+            </span>
           </div>
 
         </div>
-      </div>
-
-      <div class="hero-bottom">
-        <span class="hero-bottom-label">
-          Made for the moments<br>in between.
-        </span>
-
-        <a href="#story" class="scroll-cue">
-          Scroll to explore
-          <span class="scroll-line"></span>
-        </a>
       </div>
 
     </section>
@@ -2028,7 +2002,7 @@
         </div>
 
         <div class="gallery-grid" id="galleryGrid">
-          <!-- Gallery populated from the provided asset filenames -->
+          <!-- Gallery populated from provided image filenames -->
         </div>
 
         <div class="gallery-footer">
